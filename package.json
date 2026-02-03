@@ -16,12 +16,12 @@
     "hexo-server": "3.0.0"
   },
 "scripts": {
-  "clean": "node -e \"require('hexo').default.init({_: ['clean']})\"",
-  "generate": "node -e \"require('hexo').default.init({_: ['generate']})\"",
-  "build": "node -e \"require('hexo').default.init({_: ['clean']})\" && node -e \"require('hexo').default.init({_: ['generate']})\"",
-  "start": "node -e \"require('hexo').default.init({_: ['server']})\""
+  "build": "node build.js",
+  "clean": "node -e \"const Hexo=require('hexo');new Hexo(__dirname).init().then(h=>h.call('clean').then(()=>h.exit()))\"",
+  "generate": "node -e \"const Hexo=require('hexo');new Hexo(__dirname).init().then(h=>h.call('generate').then(()=>h.exit()))\"",
+  "start": "node -e \"const Hexo=require('hexo');new Hexo(__dirname).init().then(h=>h.call('server').then(()=>h.exit()))\""
 },
 "engines": {
-    "node": "24.x"
+    "node": ">=18.x <=24.x"
   }
 }

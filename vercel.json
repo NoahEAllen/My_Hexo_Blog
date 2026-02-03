@@ -11,5 +11,6 @@
     }
   ],
   "outputDirectory": "public",
-  "framework": null
+  "framework": null,
+  "installCommand": "yarn install --frozen-lockfile"
 }
