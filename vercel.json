@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "public",
+        "installCommand": "yarn install --frozen-lockfile",
+        "buildCommand": "yarn hexo clean && yarn hexo generate"
+      }
+    }
+  ],
+  "outputDirectory": "public"
+}
