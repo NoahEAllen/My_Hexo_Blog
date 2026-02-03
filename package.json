@@ -15,12 +15,12 @@
     "hexo-renderer-stylus": "3.0.0",
     "hexo-server": "3.0.0"
   },
-  "scripts": {
-    "clean": "hexo clean",
-    "generate": "hexo generate",
-    "build": "hexo clean && hexo generate",
-    "start": "hexo server"
-  },
+"scripts": {
+  "clean": "node -e \"require('hexo').default.init({_: ['clean']})\"",
+  "generate": "node -e \"require('hexo').default.init({_: ['generate']})\"",
+  "build": "node -e \"require('hexo').default.init({_: ['clean']})\" && node -e \"require('hexo').default.init({_: ['generate']})\"",
+  "start": "node -e \"require('hexo').default.init({_: ['server']})\""
+},
 "engines": {
     "node": "24.x"
   }
